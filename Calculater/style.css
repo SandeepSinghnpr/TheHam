@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    background-color:lightslategray;
+}
+h1{
+    text-align: center;
+    margin-top: 80px;
+    color: white;
+}
+
+.bigcontainer{
+    height: 400px;
+    width: 450px;
+    background-color: rgba(136, 126, 151, 0.607);
+    border: 2px solid black;
+    border-radius: 4px;
+    margin-left: 500px;
+}
+
+.container{
+    /* width: 400px;
+    border: 3px solid black;
+    margin-left: 600px;
+    margin-right: 600px;
+    background-color: rgb(133, 185, 202);
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 5px; */
+    text-align: center;
+}
+
+input{
+    padding: 20px;
+    margin: 5px;
+    font-size:x-large;
+    font-weight: 700;
+    background-color: lightcyan;
+    border: 2px solid black;
+    border-radius: 5px;
+
+}
+
+input:nth-child(1){
+    color: orange;
+}
+
+input:nth-child(3){
+    color: orange;
+}
+#res{
+    color: green;
+}
+.selectOperator{
+    padding: 10px 30px 10px 30px;
+    margin-left: 5px;
+    margin-top: 10px;
+    font-size: 25px;
+    background-color: rgb(116, 182, 233);
+    font-weight: 700;
+}
+select>option{
+    font-weight: 700;
+}
+.selectOperator:hover{
+    cursor: pointer;
+}
+.calculate{
+    padding: 10px 30px 10px 22px;
+    margin-left: 5px;
+    margin-top: 10px;
+    font-size: 25px;
+    border-radius: 20px;
+    background-color: lightgreen;
+    font-weight:600 ;
+}
+.calculate:hover{
+    cursor: pointer;
+    box-shadow:inset;
+    opacity: 0.7;
+
+}
+
+select>option{
+    color: blue;
+}

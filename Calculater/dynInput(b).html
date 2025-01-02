@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Input b</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calculater Program</h1>
+    <div class="bigcontainer">
+    <div class="container">
+        <input type="number" id="firstNum" step="any"><br>
+        <input type="number" id="secondNum" step="any"><br>
+        <input type="number" id="res" readonly=""><br>
+        <select name="Operator" class="selectOperator" id="ope">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">x</option>
+            <option value="/">/</option>
+        </select>
+        <button type="button" class="calculate" onclick="abc()">Calculate</button>
+    </div>
+    </div>
+
+    <script>
+        function abc(){
+            var firstNum = document.getElementById('firstNum').value;
+            var secondNum= document.getElementById('secondNum').value;
+            var ope = document.getElementById('ope').value;
+
+            if(ope == '+') {
+                var res = parseInt(firstNum) + parseInt(secondNum);
+            }
+            if(ope == '-'){
+                var res = parseInt(firstNum) - parseInt(secondNum);
+            }
+            if(ope == '*'){
+                var res =  parseInt(firstNum) * parseInt(secondNum);
+            }
+            if(ope == '/'){
+                var res = parseInt(firstNum) / parseInt(secondNum);
+            }
+          document.getElementById('res').value = res;
+        }
+    </script>
+   
+</body>
+</html>

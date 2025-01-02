@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+    </style>
+    <style>
+        body{
+            background-image: url('https://t4.ftcdn.net/jpg/04/94/85/25/360_F_494852538_r8ylVApdAY0YuWYCkWIsg5pDZkboERYI.jpg');
+            background-size: 100%;
+        }
+        *{
+            margin: 0 auto;
+            padding: 0;
+        }
+        #container{
+            width: 100%;
+            height: 60px;
+            background-color:rgb(57, 164, 217);
+            
+        }
+        a{
+            color:white;
+            text-decoration: none
+            
+
+        }
+        ul{
+            list-style-type: none;
+            line-height: 100px;
+            margin-left: 400px;
+        }
+
+        ul>li{
+            float: left;
+            padding: 0px 20px 0px 20px;
+            font-size: 20px;
+            line-height: 57px;
+            border: 1px solid rgb(35, 130, 139);
+            border-radius: 10px;
+
+        }
+        ul>li:hover{
+            background-color:#9ac6e5;
+            color: rgb(35, 130, 139);
+            cursor: pointer;
+            
+        }
+        i{
+            color:white;
+        }
+
+        #model{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0,0.5);
+            display: flex;
+            position: fixed;
+            top: 0px;
+            position: center;
+            visibility: hidden;
+            border: 2px solid black;
+        }
+
+        #mode section{
+            padding: 50px;
+            background-color: white;
+            border: 50px solid black;
+        }
+        #model input {
+            padding: 10px;
+            margin: 5px;
+            
+        }
+        #Add_new{
+            padding: 30px;
+            background-color:rgb(57, 164, 217);
+            margin-left: 300px;
+            margin-top: 300px;
+            border: none;
+            font-size: 20px;
+            border-radius: 10px;
+            
+        }
+        #Add_new:hover{
+            background-color:#9ac6e5;
+            border: 2px solid rgb(57, 164, 217);
+            color: white;
+
+            cursor: pointer;
+        }
+        /* navaition style complet */
+        
+        #section1{
+            font-family:'Times New Roman', Times, serif;
+            border: 2px solid black;
+            margin-top: 200px;
+            margin-bottom: 200px;
+            padding: 50px;
+            background-color: rgb(57, 164, 217);
+            border-radius: 10px;
+            height: auto;
+        }
+        #addnewbutton{
+            padding: 10px;
+            text-align: center;  
+            margin-left: 70px;
+            margin-top: 20px;
+            background-color: rgb(44, 143, 230);
+            border-radius: 5px;
+            border-width: 1px;
+        }
+
+        #addnewbutton:hover{
+            background-color:#9ac6e5;
+            border: 2px solid rgb(57, 164, 217);
+            color: white;
+            cursor:pointer;
+        }
+
+        #heading{
+            color: white;
+            text-align: center;
+        }
+        
+        #section1>input{
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="dynnav">
+        </ul>
+    </div>
+    <ul id="button_main">
+        <input type="button" id="Add_new" value="Add New Menu" onclick="openmodel()">
+    </ul>
+
+    <div id="model">
+        <section id="section1">
+            <h1 id="heading">Add New Menu</h1>
+            <input type="text" placeholder="nav name"><br>
+            <input type="text" placeholder="url"><br>
+            <button type="button" id="addnewbutton" onclick="addnewmenu()" ondblclick="">Add New</button>
+        </section>
+    </div>
+
+    <script>
+        function openmodel(){
+            mymodel = document.getElementById('model');
+            mymodel.style.visibility="visible";
+        }
+        var mynav =[
+            {
+                menuname:"Home",
+                menulink:"http://google.com"
+            },
+            {
+                menuname:"About",
+                menulink:"http://google.com"
+            },
+            {
+                menuname:"Service",
+                menulink:"https://service.com"
+            }
+        ];
+        function generatemenu()
+        {
+            var newitem = mynav.map((m)=>{
+                return `<li><a href=${m.menulink}">${m.menuname}</a></li>`;
+                return `<li><a href=${m.menulink}">${m.menuname}</a></li>`;
+            });
+            document.getElementById('dynnav').innerHTML=newitem.join("");
+        }
+        generatemenu();
+
+        function addnewmenu()
+        {
+            var myinput = document.querySelectorAll("#model input");
+            mynav.push({menuname:myinput[0].value,menulink:myinput[1].value});
+            generatemenu();
+
+            myinput[0].value="";
+            myinput[1].value="";
+            document.getElementById('model').removeAttribute("style");
+        }
+    </script>
+</body>
+</html>
